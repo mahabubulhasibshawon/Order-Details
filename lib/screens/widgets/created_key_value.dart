@@ -4,7 +4,12 @@ class CreatedKeyValue extends StatelessWidget {
   final String item_key;
   final String item_value;
   final Color? color;
-  const CreatedKeyValue({super.key, required this.item_key, required this.item_value, this.color});
+
+  const CreatedKeyValue(
+      {super.key,
+      required this.item_key,
+      required this.item_value,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -16,29 +21,30 @@ class CreatedKeyValue extends StatelessWidget {
             Expanded(
               child: Row(
                 children: [
-                  Text(item_key,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall!
-                    ,),
+                  Text(
+                    item_key,
+                    style: Theme.of(context).textTheme.titleSmall!,
+                  ),
                 ],
               ),
             ),
             Expanded(
               child: Row(
                 children: [
-                  Text(item_value,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall!
-                    .copyWith(fontWeight: FontWeight.bold, color: color ?? Colors.black)
-                    ,),
+                  Text(
+                    item_value,
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: color ?? Colors.black),
+                  ),
                 ],
               ),
             ),
           ],
         ),
-        SizedBox(height: height * .01,),
+        SizedBox(
+          height: height * .01,
+        ),
       ],
     );
   }

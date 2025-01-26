@@ -4,13 +4,13 @@ class TimelineStep extends StatelessWidget {
   final bool isActive;
   final String title;
   final String description;
-  final bool isLine;
+  final bool isLast;
   const TimelineStep({
     super.key,
     required this.isActive,
     required this.title,
     required this.description,
-    this.isLine = true
+    this.isLast = true
   });
 
   @override
@@ -33,10 +33,10 @@ class TimelineStep extends StatelessWidget {
               ),
             ),
             // line
-            isLine ? Container(
+            isLast ? Container(
               width: height * .003,
               height: 60,
-              color: Colors.grey.shade500,
+              color:isActive ? Color(0xff0042fd): Colors.grey.shade500,
             ) : Container(),
           ],
         ),
